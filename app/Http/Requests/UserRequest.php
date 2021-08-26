@@ -37,4 +37,16 @@ class UserRequest extends FormRequest
             ]
         ];
     }
+
+    public function messages(): array  {
+        return [
+            'name.required' => 'Digite o nome',
+            'name.string'   => 'Informe um nome válido',
+            'email.required' => 'Digite o e-mail',
+            'email.email' => 'Informe um e-mail válido',
+            'email.unique' => 'Este e-mail já foi utilizado',
+            'password.required' => 'Informe a senha',
+            'password.min' => 'Senha deve ter no mínimo 8 caracteres'
+        ];
+    }
 }
