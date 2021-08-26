@@ -25,13 +25,13 @@ class DoctorsController extends Controller
     }
 
     public function show($id) {
-        $doctorId = Doctor::findOrFail($id);
-        return view('doctors.show', compact('doctorId'));
+        $doctors = Doctor::findOrFail($id);
+        return view('doctors.show', compact('doctors'));
     }
 
     public function edit($id) {
-        $doctorId = Doctor::findOrFail($id);
-        return view('doctors.edit', compact('$doctorId'));
+        $doctors = Doctor::findOrFail($id);
+        return view('doctors.edit', compact('$doctors'));
     }
 
     public function update(UpdateDoctorRequest $request, Doctor $doctor) {

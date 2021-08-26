@@ -24,7 +24,7 @@
                                                             ID
                                                         </th>
                                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                                            {{ $doctor->id }}
+                                                            {{ $doctors->id }}
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -32,7 +32,7 @@
                                                             Nome
                                                         </th>
                                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                                            {{ $doctor->name }}
+                                                            {{ $doctors->name }}
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -40,7 +40,7 @@
                                                             Especialidade
                                                         </th>
                                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                                            {{ $doctor->specialty }}
+                                                            {{ $doctors->specialty }}
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -48,7 +48,7 @@
                                                             CRM
                                                         </th>
                                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                                            {{ $doctor->crm }}
+                                                            {{ $doctors->crm }}
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -56,7 +56,7 @@
                                                             Cadastrado em
                                                         </th>
                                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                                            {{ $doctor->created_at }}
+                                                            {{ $doctors->created_at }}
                                                         </td>
                                                     </tr>
                                                 </table>
