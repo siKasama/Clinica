@@ -21,8 +21,8 @@
                         <span class="d-lg-none">{{ __('Notification') }}</span>
                     </a>
                     <ul class="dropdown-menu">
-                        <a class="dropdown-item" href="#">{{ __('API Tokens') }}</a>
-                    </ul>  {{-- {{ route('api-tokens.index') }} --}}
+                        <a class="dropdown-item" href="api/doctors">{{ __('API Tokens') }}</a>
+                    </ul> 
                 </li>
 
             </ul>
@@ -30,7 +30,7 @@
                 <li class="nav-item">
                     <form id="logout-form" action="{{ route('logout') }}" method="POST">
                         @csrf
-                        <a class="text-danger" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> {{ __('Log out') }} </a>
+                        <a class="text-danger" href="{{ route('logout') }}"onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> {{ __('Log out') }} </a>
                     </form>
                 </li>
             </ul>

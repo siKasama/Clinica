@@ -20,14 +20,14 @@
                             <a href="{{ route('doctors.index') }}" class="bg-gray-200 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded">Listar Médicos</a>
                         </div>
                         <div class="mt-5 md:mt-0 md:col-span-2">
-                            <form method="post" action="{{ route('doctors.update', $doctor->id) }}">
+                            <form method="post" action="{{ route('doctors.update', $doctors->id) }}">
                                 @csrf
                                 @method('put')
                                 <div class="shadow overflow-hidden sm:rounded-md">
                                     <div class="px-4 py-5 bg-white sm:p-6">
                                         <label for="name" class="block font-medium text-sm text-gray-700">Nome</label>
                                         <input type="text" name="name" id="name" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                               value="{{ old('name', $doctor->name) }}" />
+                                               value="{{ old('name', $doctors->name) }}" />
                                         @error('name')
                                         <p class="text-sm text-red-600">{{ $message }}</p>
                                         @enderror
@@ -36,7 +36,7 @@
                                     <div class="px-4 py-5 bg-white sm:p-6">
                                         <label for="specialty" class="block font-medium text-sm text-gray-700">Especialidade</label>
                                         <input type="text" name="specialty" id="specialty" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                               value="{{ old('specialty', $doctor->specialty) }}" />
+                                               value="{{ old('specialty', $doctors->specialty) }}" />
                                         @error('specialty')
                                         <p class="text-sm text-red-600">{{ $message }}</p>
                                         @enderror
@@ -45,7 +45,7 @@
                                     <div class="px-4 py-5 bg-white sm:p-6">
                                         <label for="crm" class="block font-medium text-sm text-gray-700">CRM</label>
                                         <input type="text" name="crm" id="crm" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                               value="{{ old('crm', $doctor->crm) }}" />
+                                               value="{{ old('crm', $doctors->crm) }}" />
                                         @error('crm')
                                         <p class="text-sm text-red-600">{{ $message }}</p>
                                         @enderror

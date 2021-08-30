@@ -23,22 +23,14 @@ Route::get('/', function () {
     if (auth()->check()) {
         return redirect()->route('dashboard');
     }
-    return view('login');
+    return view('auth');
 });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('dashboard');
-// Route::resource('doctor', 'App\Http\Controllers\DoctorsController');
-
-// Route::get('/doctors/index',  [App\Http\Controllers\DoctorsController::class, 'index'])->name('doctor.index');
-// Route::post('doctor', ['as' => 'doctor.edit', 'uses' => 'App\Http\Controllers\DoctorsController@edit']);
-// Route::post('doctor', ['as' => 'doctor.create', 'doctor' => 'App\Http\Controllers\DoctorsController@create']);
-// Route::resource('paciente', 'App\Http\Controllers\PacienteController', ['except' => ['show']]);
-// Route::any('/pacientes/index',  [App\Http\Controllers\PacienteController::class, 'index'])->name('paciente.index');
-// Route::post('/pacientes/create', [App\Http\Controllers\PacienteController::class, 'create'])->name('paciente.create');
-// Route::patch('/pacientes/edit', ['as' => 'paciente.edit', 'pacientes' => 'App\Http\Controllers\PacienteController@edit']);
+Auth::routes();
+Route::get('/logout', 'App\Http\Controllers\Auth\LoginController@logout');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', function () {

@@ -21,8 +21,8 @@
                         <span class="d-lg-none">{{ __('Notification') }}</span>
                     </a>
                     <ul class="dropdown-menu">
-                        <a class="dropdown-item" href="#">{{ __('API Tokens') }}</a>
-                    </ul>  {{-- {{ route('api-tokens.index') }} --}}
+                        <a class="dropdown-item" target="_blank" href="#">{{ __('API Tokens') }}</a>
+                    </ul>  
                 </li>
 
             </ul>
