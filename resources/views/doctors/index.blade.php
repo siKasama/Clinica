@@ -24,7 +24,7 @@
                                 @foreach($doctors as $doct)
                                     <tr>
                                         <td>{{ $doct->id }}</td>
-                                        <td>{{ $doct->nome }}</td>
+                                        <td>{{ $doct->name }}</td>
                                         <td>{{ $doct->crm }}</td>
                                         <td>{{ $doct->especialidade }}</td>
                                         <td>

@@ -34,10 +34,10 @@
                                     </div>
 
                                     <div class="px-4 py-5 bg-white sm:p-6">
-                                        <label for="specialty" class="block font-medium text-sm text-gray-700">Especialidade</label>
-                                        <input type="text" name="specialty" id="specialty" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                               value="{{ old('specialty', $doctors->specialty) }}" />
-                                        @error('specialty')
+                                        <label for="especialidade" class="block font-medium text-sm text-gray-700">Especialidade</label>
+                                        <input type="text" name="especialidade" id="especialidade" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                               value="{{ old('especialidade', $doctors->especialidade) }}" />
+                                        @error('especialidade')
                                         <p class="text-sm text-red-600">{{ $message }}</p>
                                         @enderror
                                     </div>

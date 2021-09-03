@@ -21,7 +21,7 @@ class DoctorsController extends Controller
 
     public function store(StoreDoctorRequest $request) {
         $doctor = Doctor::create($request->validated());
-        return redirect('/doctors')->route('doctors.index');
+        return redirect()->route('doctors.index');
     }
 
     public function show($id) {
@@ -36,12 +36,12 @@ class DoctorsController extends Controller
 
     public function update(UpdateDoctorRequest $request, Doctor $doctor) {
         $doctor->update(array_filter($request->validated()));
-        return redirect('/doctors')->route('doctors.index');
+        return redirect()->route('doctors.index');
     }
 
     public function destroy(Doctor $doctor) {
         $doctor->delete();
-        return redirect('/doctors')->route('doctors.index');
+        return redirect()->route('doctors.index');
     }
 
 }
