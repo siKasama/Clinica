@@ -24,8 +24,8 @@
                     <form method="post" action="{{ route('users.store') }}">
                         @csrf
                         <div class="shadow overflow-hidden sm:rounded-md">
-                            <div class="px-4 py-5 bg-white sm:p-6">
-                                <label for="name" class="block font-medium text-sm text-gray-700">Nome</label>
+                            <div class="px-4 py-3 bg-white sm:p-6">
+                                <label for="name" class="block font-medium text-sm text-gray-700">Nome: </label>
                                 <input type="text" name="name" id="name" class="form-input rounded-md shadow-sm mt-1 block w-full"
                                     value="{{ old('name', '') }}" />
                                 @error('name')
@@ -33,8 +33,8 @@
                                 @enderror
                             </div>
 
-                            <div class="px-4 py-5 bg-white sm:p-6">
-                                <label for="email" class="block font-medium text-sm text-gray-700">E-mail</label>
+                            <div class="px-4 py-3  bg-white sm:p-6">
+                                <label for="email" class="block font-medium text-sm text-gray-700">E-mail: </label>
                                 <input type="email" name="email" id="email" class="form-input rounded-md shadow-sm mt-1 block w-full"
                                     value="{{ old('email', '') }}" />
                                 @error('email')
@@ -42,16 +42,30 @@
                                 @enderror
                             </div>
 
-                            <div class="px-4 py-5 bg-white sm:p-6">
-                                <label for="password" class="block font-medium text-sm text-gray-700">Senha</label>
+                            <div class="px-4 py-3 bg-white sm:p-6">
+                                <label for="password" class="block font-medium text-sm text-gray-700">Senha: </label>
                                 <input type="password" name="password" id="password" class="form-input rounded-md shadow-sm mt-1 block w-full" />
                                 @error('password')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
 
+                            @if(auth()->user()->is_admin)
+                            <div class="px-4 py-5 bg-white sm:p-6">
+                                <label for="type" class="block font-medium text-sm text-gray-700">Tipo: </label>
+                                <select name="type" id="type" class="block rounded-md shadow-sm mt-1 block w-full">
+                                    @foreach($types as $key => $value)
+                                        <option value="{{ $key }}"{{ $key == old('$types', '') ? ' selected' : '0' }}>{{ $value }}</option>
+                                    @endforeach
+                                </select>
+                                @error('type')
+                                <p class="text-sm text-red-600">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            @endif
+
                             <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6">
-                                <button class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150">
+                                <button class="inline-flex items-center px-4 py-2 bg-blue-800 border border-transparent rounded-md font-semibold text-xs text-black uppercase tracking-widest hover:bg-blue-700 active:bg-blue-900 focus:outline-none focus:border-blue-900 focus:shadow-outline-blue disabled:opacity-25 transition ease-in-out duration-150">
                                     Cadastrar
                                 </button>
                             </div>

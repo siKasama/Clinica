@@ -22,6 +22,7 @@
                                         <th scope="col"> Nome </th>
                                         <th scope="col"> E-mail </th>
                                         <th scope="col"> Criado em </th>
+                                        <th scope="col"> Tipo </th>
                                         <th scope="col" width="200" class="px-6 py-3 bg-gray-50">  </th>
                                     </tr>
                                     </thead>
@@ -46,6 +47,17 @@
                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                                 {{ $user->created_at  }}
                                             </td>
+                                            <td>
+                                            @if($user->is_admin)
+                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-black text-black">
+                                                Admin
+                                                </span>
+                                            @else
+                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-700 text-black">
+                                                Usuário
+                                            </span>
+                                            @endif
+                                            </td>
 
                                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                                 <a href="{{ route('users.show', $user->id) }}" class="text-green-600 hover:text-blue-900 mb-2 mr-2" title="Exibir usuário">Ver</a>
@@ -61,7 +73,11 @@
                                     </tbody>
                                 </table>
                             </div>
+
                         </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button class="btn-md"><a class="nav-link" href="{{ route('users.create') }}">Incluir</a></button>
                     </div>
                 </div>
             </div>

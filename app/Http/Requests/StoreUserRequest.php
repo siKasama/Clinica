@@ -4,14 +4,15 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateUserRequest extends FormRequest
+class StoreUserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
-    public function authorize() {
+    public function authorize(): bool
+    {
         return true;
     }
 
@@ -20,7 +21,8 @@ class UpdateUserRequest extends FormRequest
      *
      * @return array
      */
-    public function rules(): array  {
+    public function rules(): array
+    {
         return [
             'name'     => [
                 'string',
@@ -28,9 +30,13 @@ class UpdateUserRequest extends FormRequest
             ],
             'email'    => [
                 'required',
-                'unique:users,email,' . request()->route('user')->id,
+                'unique:users',
             ],
-            'password' => 'nullable|min:5'
+            'password' => [
+                'required',
+                'min:5'
+            ],
+            'is_admin' => [ 'default:0']
         ];
     }
 
@@ -39,13 +45,15 @@ class UpdateUserRequest extends FormRequest
      *
      * @return array
      */
-    public function messages(): array  {
+    public function messages(): array
+    {
         return [
             'name.required' => 'Digite o nome',
             'name.string'   => 'Informe um nome válido',
             'email.required' => 'Digite o e-mail',
             'email.email' => 'Informe um e-mail válido',
             'email.unique' => 'Este e-mail já foi utilizado',
+            'password.required' => 'Informe a senha',
             'password.min' => 'Senha deve ter no mínimo 5 caracteres'
         ];
     }
