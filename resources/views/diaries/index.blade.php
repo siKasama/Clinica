@@ -73,6 +73,9 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-12">
+                    <button class="btn-md"><a class="nav-link" href="{{ route('diaries.create') }}">Incluir</a></button>
+                </div>
             </div>
         </div>
     </div>

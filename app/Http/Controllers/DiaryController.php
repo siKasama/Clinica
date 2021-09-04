@@ -33,7 +33,7 @@ class DiaryController extends Controller
         $pacientes = Paciente::orderBy('name')->get();
         $doctors = Doctor::orderBy('name')->get();
 
-        return view('diaries.create', compact('diaries', 'doctors'));
+        return view('diaries.create', compact('pacientes', 'doctors'));
     }
 
     /**
