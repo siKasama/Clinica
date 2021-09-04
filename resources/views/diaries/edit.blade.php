@@ -25,35 +25,35 @@
                                 @method('put')
                                 <div class="shadow overflow-hidden sm:rounded-md">
 
-                                    <div class="px-4 py-5 bg-white sm:p-6">
-                                        <label for="id" class="block font-medium text-sm text-gray-700">Número</label>
+                                    <div class="px-5 py-4 bg-white sm:p-2">
+                                        <label for="id" class="block font-medium text-sm text-gray-700">Número: </label>
                                         <input type="text" name="id" id="id" class="form-input rounded-md shadow-sm mt-1 block w-full"
                                                value="{{ $diary->id }}" readonly />
                                     </div>
 
-                                    <div class="px-4 py-5 bg-white sm:p-6">
-                                        <label for="paciente_name" class="block font-medium text-sm text-gray-700">Paciente</label>
+                                    <div class="px-5 py-4 bg-white sm:p-2">
+                                        <label for="paciente_name" class="block font-medium text-sm text-gray-700">Paciente: </label>
                                         <input type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
                                                value="{{ $diary->paciente->name }}" readonly />
                                     </div>
 
-                                    <div class="px-4 py-5 bg-white sm:p-6">
-                                        <label for="doctor_name" class="block font-medium text-sm text-gray-700">Doctor</label>
+                                    <div class="px-5 py-4 bg-white sm:p-2">
+                                        <label for="doctor_name" class="block font-medium text-sm text-gray-700">Doctor: </label>
                                         <input type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
                                                value="{{ $diary->doctor->name }}" readonly />
                                     </div>
 
-                                    <div class="px-4 py-5 bg-white sm:p-6">
-                                        <label for="date" class="block font-medium text-sm text-gray-700">Agendado para</label>
-                                        <input type="datetime-local" name="date" id="date" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                            value={{ old('date', $diary->dateToHtml ) }} />
-                                        @error('date')
+                                    <div class="px-5 py-4 bg-white sm:p-2">
+                                        <label for="dateBr" class="block font-medium text-sm text-gray-700">Agendado para: </label>
+                                        <input type="datetime-local" name="dateBr" id="dateBr" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                            value={{ old('dateBr', $diary->dateToHtml ) }} />
+                                        @error('dateBr')
                                         <p class="text-sm text-red-600">{{ $message }}</p>
                                         @enderror
                                     </div>
 
                                     <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6">
-                                        <button class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150">
+                                        <button class="inline-flex items-center px-4 py-2 bg-blue-800 border border-transparent rounded-md font-semibold text-xs text-black uppercase tracking-widest hover:bg-blue-700 active:bg-blue-900 focus:outline-none focus:border-blue-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150">
                                             Editar
                                         </button>
                                     </div>

@@ -156,21 +156,7 @@ demo = {
             ]
         };
 
-        optionsDailySalesChart = {
-            lineSmooth: Chartist.Interpolation.cardinal({
-                tension: 0
-            }),
-            low: 0,
-            high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
-            chartPadding: {
-                top: 0,
-                right: 0,
-                bottom: 0,
-                left: 0
-            },
-        }
 
-        var dailySalesChart = new Chartist.Line('#dailySalesChart', dataDailySalesChart, optionsDailySalesChart);
 
         // lbd.startAnimationForLineChart(dailySalesChart);
     },
@@ -193,13 +179,6 @@ demo = {
                 showGrid: false
             }
         };
-
-        Chartist.Pie('#chartPreferences', dataPreferences, optionsPreferences);
-
-        Chartist.Pie('#chartPreferences', {
-            labels: ['53%', '36%', '11%'],
-            series: [53, 36, 11]
-        });
 
 
         var dataSales = {
@@ -231,22 +210,7 @@ demo = {
         //   showPoint: true,
         //   fullWidth: true
         // };
-        var optionsSales = {
-            lineSmooth: false,
-            low: 0,
-            high: 800,
-            showArea: true,
-            height: "245px",
-            axisX: {
-                showGrid: false,
-            },
-            lineSmooth: Chartist.Interpolation.simple({
-                divisor: 3
-            }),
-            showLine: false,
-            showPoint: false,
-            fullWidth: false
-        };
+
 
         var responsiveSales = [
             ['screen and (max-width: 640px)', {
@@ -258,8 +222,7 @@ demo = {
             }]
         ];
 
-        var chartHours = Chartist.Line('#chartHours', dataSales, optionsSales, responsiveSales);
-
+ 
         // lbd.startAnimationForLineChart(chartHours);
 
         var data = {
@@ -289,9 +252,7 @@ demo = {
             }]
         ];
 
-        var chartActivity = Chartist.Bar('#chartActivity', data, options, responsiveOptions);
 
-        // lbd.startAnimationForBarChart(chartActivity);
 
         // /* ----------==========     Daily Sales Chart initialization    ==========---------- */
         //

@@ -61,8 +61,7 @@
     <script src="{{ asset('light-bootstrap/js/plugins/bootstrap-switch.js') }}"></script>
     <!--  Google Maps Plugin    -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-    <!--  Chartist Plugin  -->
-    <script src="{{ asset('light-bootstrap/js/plugins/chartist.min.js') }}"></script>
+ 
     <!--  Notifications Plugin    -->
     <script src="{{ asset('light-bootstrap/js/plugins/bootstrap-notify.js') }}"></script>
     <!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->

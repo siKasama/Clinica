@@ -37,7 +37,7 @@ class PacienteController extends Controller
      */
     public function store(StorePacienteRequest $request)   {
         $show = Paciente::create($request->validated());
-        return redirect()->route('paciente.index');
+        return redirect()->route('pacientes.index');
     }
 
     /**
@@ -71,7 +71,7 @@ class PacienteController extends Controller
      */
     public function update(UpdatePacienteRequest $request, Paciente $paciente)  {
         $paciente->update($request->validated());
-        return redirect()->route('paciente.index');
+        return redirect()->route('pacientes.index');
     }
 
     /**
@@ -83,6 +83,6 @@ class PacienteController extends Controller
     public function destroy(Paciente $paciente)  {
 
         $paciente->delete();
-        return redirect()->route('paciente.index');
+        return redirect()->route('pacientes.index');
     }
 }

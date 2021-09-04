@@ -156,22 +156,7 @@ demo = {
             ]
         };
 
-        optionsDailySalesChart = {
-            lineSmooth: Chartist.Interpolation.cardinal({
-                tension: 0
-            }),
-            low: 0,
-            high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
-            chartPadding: {
-                top: 0,
-                right: 0,
-                bottom: 0,
-                left: 0
-            },
-        }
-
-        var dailySalesChart = new Chartist.Line('#dailySalesChart', dataDailySalesChart, optionsDailySalesChart);
-
+        
         // lbd.startAnimationForLineChart(dailySalesChart);
     },
 
@@ -194,23 +179,7 @@ demo = {
             }
         };
 
-        Chartist.Pie('#chartPreferences', dataPreferences, optionsPreferences);
-
-        Chartist.Pie('#chartPreferences', {
-            labels: ['53%', '36%', '11%'],
-            series: [53, 36, 11]
-        });
-
-
-        var dataSales = {
-            labels: ['9:00AM', '12:00AM', '3:00PM', '6:00PM', '9:00PM', '12:00PM', '3:00AM', '6:00AM'],
-            series: [
-                [287, 385, 490, 492, 554, 586, 698, 695, 752, 788, 846, 944],
-                [67, 152, 143, 240, 287, 335, 435, 437, 539, 542, 544, 647],
-                [23, 113, 67, 108, 190, 239, 307, 308, 439, 410, 410, 509]
-            ]
-        };
-
+        
         // var optionsSales = {
         //   lineSmooth: false,
         //   low: 0,
@@ -231,22 +200,6 @@ demo = {
         //   showPoint: true,
         //   fullWidth: true
         // };
-        var optionsSales = {
-            lineSmooth: false,
-            low: 0,
-            high: 800,
-            showArea: true,
-            height: "245px",
-            axisX: {
-                showGrid: false,
-            },
-            lineSmooth: Chartist.Interpolation.simple({
-                divisor: 3
-            }),
-            showLine: false,
-            showPoint: false,
-            fullWidth: false
-        };
 
         var responsiveSales = [
             ['screen and (max-width: 640px)', {
@@ -258,8 +211,7 @@ demo = {
             }]
         ];
 
-        var chartHours = Chartist.Line('#chartHours', dataSales, optionsSales, responsiveSales);
-
+ 
         // lbd.startAnimationForLineChart(chartHours);
 
         var data = {

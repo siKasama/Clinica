@@ -21,7 +21,7 @@
                                                 <table class="table table-hover table-striped">
                                                     <tr>
                                                         <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                            ID
+                                                            ID:
                                                         </th>
                                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
                                                             {{ $diary->id }}
@@ -29,7 +29,7 @@
                                                     </tr>
                                                     <tr>
                                                         <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                            Paciente
+                                                            Paciente:
                                                         </th>
                                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
                                                             {{ $diary->paciente->name }}
@@ -37,7 +37,7 @@
                                                     </tr>
                                                     <tr>
                                                         <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                            Médico
+                                                            Médico:
                                                         </th>
                                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
                                                             {{ $diary->email }}
@@ -45,7 +45,7 @@
                                                     </tr>
                                                     <tr>
                                                         <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                            Agendado para
+                                                            Agendado para:
                                                         </th>
                                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
                                                             {{ $diary->dateBr }}
@@ -53,7 +53,7 @@
                                                     </tr>
                                                     <tr>
                                                         <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                            Criado em
+                                                            Criado em:
                                                         </th>
                                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
                                                             {{ $diary->created_at }}
@@ -61,7 +61,7 @@
                                                     </tr>
                                                     <tr>
                                                         <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                            Observações
+                                                            Observações:
                                                         </th>
                                                         <td class="px-6 py-4 text-sm text-gray-900 bg-white divide-y divide-gray-200">
                                                             {{ $diary->observations }}
