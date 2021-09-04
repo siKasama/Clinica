@@ -38,7 +38,7 @@ class StoreDiaryRequest extends FormRequest
                 'date',
                 'required',
                 function ($attribute, $value, $fail) {
-                    if (Diary::where([ 'doctor_id' => request()->doctor_id, 'date' => $value])->count()) {
+                    if (Diary::where([ 'doctors_id' => request()->doctor_id, 'date' => $value])->count()) {
                         $fail('Atenção! O médico já possui este horário agendado' );
                     }
                 }

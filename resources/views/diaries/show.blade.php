@@ -40,7 +40,7 @@
                                                             Médico:
                                                         </th>
                                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                                            {{ $diary->email }}
+                                                            {{ $diary->doctor->name }}
                                                         </td>
                                                     </tr>
                                                     <tr>

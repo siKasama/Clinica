@@ -44,10 +44,10 @@
                                     </div>
 
                                     <div class="px-5 py-4 bg-white sm:p-2">
-                                        <label for="dateBr" class="block font-medium text-sm text-gray-700">Agendado para: </label>
-                                        <input type="datetime-local" name="dateBr" id="dateBr" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                            value={{ old('dateBr', $diary->dateToHtml ) }} />
-                                        @error('dateBr')
+                                        <label for="date" class="block font-medium text-sm text-gray-700">Agendado para: </label>
+                                        <input type="datetime-local" name="date" id="date" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                            value={{ old('date', $diary->dateToHtml ) }} />
+                                        @error('date')
                                         <p class="text-sm text-red-600">{{ $message }}</p>
                                         @enderror
                                     </div>

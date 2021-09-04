@@ -10,7 +10,7 @@
                 <div class="card-header">
                     <div class="d-flex justify-content-between w-100">
                         <span>@lang('Cadastro')</span>
-                        <a href="{{ url('doctor') }}" class="btn-info btn-sm">
+                        <a href="{{ url('doctors') }}" class="btn-info btn-sm">
                             <i class="fa fa-arrow-left"></i> @lang('Voltar')
                         </a>
                     </div>

@@ -20,7 +20,7 @@ class DoctorsController extends Controller
     }
 
     public function store(StoreDoctorRequest $request) {
-        $show = Doctor::create($request->validated());
+        $doctors = Doctor::create($request->validated());
         return redirect()->route('doctors.index');
     }
 

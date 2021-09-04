@@ -22,7 +22,7 @@ class StoreDoctorRequest extends FormRequest
      */
     public function rules()  {
         return [
-            'nome'     => [
+            'name'     => [
                 'string',
                 'required',
             ],
@@ -44,8 +44,8 @@ class StoreDoctorRequest extends FormRequest
      */
     public function messages(): array  {
         return [
-            'nome.required' => 'Digite o nome',
-            'nome.string'   => 'Informe um nome válido',
+            'name.required' => 'Digite o nome',
+            'name.string'   => 'Informe um nome válido',
             'especialidade.required' => 'Digite a especialidade',
             'especialidade.string' => 'Informe a especialidade médica válida',
             'crm.required' => 'Informe o CRM',
