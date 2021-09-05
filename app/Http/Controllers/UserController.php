@@ -29,7 +29,7 @@ class UserController extends Controller
     public function create(Request $request, User $user)   {
       
         $types = [0 => 'Usuario', 1 => 'Admin'];
-        return view('users.create', compact('types'));
+        return view('users.create', compact('user', 'types'));
     }
 
     public function store(StoreUserRequest $request)  {

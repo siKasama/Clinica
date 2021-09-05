@@ -10,7 +10,7 @@
             <div class="card-header">
                     <div class="d-flex justify-content-between w-100">
                         <span>@lang('Novo Usuário')</span>
-                        <a href="{{ url('pacientes') }}" class="btn-info btn-sm">
+                        <a href="{{ url('users') }}" class="btn-info btn-sm">
                             <i class="fa fa-arrow-left"></i> @lang('Voltar')
                         </a>
                     </div>
@@ -51,7 +51,7 @@
                             </div>
 
                             @if(auth()->user()->is_admin)
-                            <div class="px-4 py-5 bg-white sm:p-6">
+                            <div class="px-4 py-5 bg-white sm:p-6"> 
                                 <label for="type" class="block font-medium text-sm text-gray-700">Tipo: </label>
                                 <select name="type" id="type" class="block rounded-md shadow-sm mt-1 block w-full">
                                     @foreach($types as $key => $value)
