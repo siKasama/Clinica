@@ -61,8 +61,8 @@
 
                                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                                 <a href="{{ route('users.show', $user->id) }}" class="text-green-600 hover:text-blue-900 mb-2 mr-2" title="Exibir usuário">Ver</a>
+                                                @if(!$user->is_admin)                                                
                                                 <a href="{{ route('users.edit', $user->id) }}" class="text-indigo-600 hover:text-indigo-900 mb-2 mr-2" title="Editar usuário">Editar</a>
-                                                @if(!$user->is_admin)
                                                 <form class="inline-block" action="{{ route('users.destroy', $user->id) }}" method="POST" onsubmit="return confirm('Deseja mesmo excluir este usuário?');">
                                                     <input type="hidden" name="_method" value="DELETE">
                                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">

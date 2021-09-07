@@ -19,9 +19,9 @@ class UsersTableSeeder extends Seeder
             'email' => 'admin@lightbp.com',
             'email_verified_at' => now(),
             'password' => Hash::make('secret'),
+            'is_admin' => TRUE,
             'created_at' => now(),
             'updated_at' => now(),
-            'is_admin' => true
         ]);
 
      
