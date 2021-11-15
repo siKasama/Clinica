@@ -12,7 +12,7 @@ class Diary extends Model
     use HasFactory;
     use Notifiable;
 
-    protected $fillable = ['paciente_id', 'doctor_id', 'date', 'observations'];
+    protected $fillable = ['client_id', 'service_id', 'date', 'hour', 'status', 'observations'];
 
     public function getCreatedAtAttribute($value): string
     {
@@ -43,17 +43,15 @@ class Diary extends Model
 
   
 
-    public function paciente()
+    public function client()
     {
-        return $this->belongsTo(Paciente::class);
+        return $this->belongsTo(Client::class);
     }
 
-    public function doctor()
+    public function service()
     {
-        return $this->belongsTo(Doctor::class);
+        return $this->belongsTo(Service::class);
     }
-
-   
 
     /**
      * @param $value
@@ -64,4 +62,6 @@ class Diary extends Model
     {
         return (new \DateTime($value))->format('d/m/Y H:i:s');
     }
+
+
 }

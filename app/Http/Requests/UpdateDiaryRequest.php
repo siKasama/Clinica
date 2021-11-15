@@ -25,6 +25,10 @@ class UpdateDiaryRequest extends FormRequest
             'date' => [
                 'date',
                 'required'
+            ],
+            'hour' => [
+                'string',
+                'required'
             ]
         ];
     }

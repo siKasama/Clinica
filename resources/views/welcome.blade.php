@@ -1,12 +1,12 @@
-@extends('layouts/app', ['activePage' => 'welcome', 'title' => 'Clinica x'])
+@extends('layouts/app', ['activePage' => 'welcome', 'title' => 'Cabeleila Leila'])
 
 @section('content')
-    <div class="full-page section-image" data-image="{{asset('img/fundoazul.jpg')}}">
+    <div class="full-page section-image" data-image="{{asset('img/rose.jpg')}}">
         <div class="content">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-7 col-md-8">
-                        <h2 class="text-white text-center">{{ __('Clinica x - Agendamentos') }}</h2>
+                        <h2 class="text-white text-center">{{ __('Cabeleila - Agendamentos & Admin.') }}</h2>
                     </div>
                 </div>
             </div>

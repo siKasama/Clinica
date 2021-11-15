@@ -24,24 +24,28 @@ class StoreDiaryRequest extends FormRequest
      */
     public function rules()  {
         return [
-            'paciente_id' => [
+            'client_id' => [
                 'numeric',
                 'required',
-                'exists:pacientes,id'
+                'exists:clients,id'
             ],
-            'doctor_id' => [
+            'service_id' => [
                 'numeric',
                 'required',
-                'exists:doctors,id'
+                'exists:services,id'
             ],
             'date' => [
                 'date',
+                'required'
+            ],
+            'hour' => [
+                'string',
                 'required',
-                function ($attribute, $value, $fail) {
-                    if (Diary::where([ 'doctor_id' => request()->doctor_id, 'date' => $value])->count()) {
-                        $fail('Atenção! O médico já possui este horário agendado' );
-                    }
-                }
+                // function ($attribute, $value, $fail) {
+                //     if (Diary::where([ 'service_id' => request()->service_id, 'date' => request()->date, 'hour' => $value ])->count()) {
+                //         $fail('Atenção! Horario indisponivel' );
+                //     }
+                // }
             ],
             'observations' => [
                 'nullable',
@@ -60,10 +64,7 @@ class StoreDiaryRequest extends FormRequest
         return [
             'name.required' => 'Digite o nome',
             'name.string'   => 'Informe um nome válido',
-            'especialidade.required' => 'Digite a especialidade',
-            'especialidade.string' => 'Informe uma especialidade válida',
-            'crm.required' => 'Informe o CRM',
-            'crm.numeric' => 'CRM deve conter apenas números'
+            'service.required' => 'Digite o Serviço'
         ];
     }
 }

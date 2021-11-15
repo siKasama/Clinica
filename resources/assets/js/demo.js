@@ -476,7 +476,7 @@ demo = {
 
         $.notify({
             icon: "nc-icon nc-app",
-            message: "Bem-vindo ao <b>Agendamento</b> - Clinica x "
+            message: "Bem-vindo ao <b>Agendamento</b> - Cabeleila Leila"
 
         }, {
             type: type[color],

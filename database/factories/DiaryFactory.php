@@ -22,9 +22,12 @@ class DiaryFactory extends Factory
     public function definition()
     {
         return [
-            'paciente_id' => $this->faker->numberBetween(1, 10),
-            'doctor_id' => $this->faker->numberBetween(1, 3),
-            'date' => $this->faker->unique()->dateTime(),
+            'client_id' => $this->faker->numberBetween(1, 12),
+            'service_id' => $this->faker->numberBetween(1, 8),
+            'date' => $this->faker->unique()->dateTimeBetween('-3 days', '+ 7 days', $timezone =  'America/Sao_Paulo'),
+            //dateTimeInInterval($startDate ='-3 days', $interval = '+ 7 days', $timezone =  'America/Sao_Paulo'),
+            'hour' => $this->faker->numberBetween(9, 19),
+            'status' => TRUE,
             'observations' => $this->faker->paragraph(rand(3, 6))
         ];
     }

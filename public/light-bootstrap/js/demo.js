@@ -479,7 +479,7 @@ demo = {
 
         $.notify({
             icon: "nc-icon nc-bulb-63",
-            message: "<b>Clinica x</b> - desenvolvido by SK."
+            message: "<b>Cabeleila Leila</b> - desenvolvido by SK."
 
         }, {
             type: type[color],

@@ -14,6 +14,6 @@ class DiariesTableSeeder extends Seeder
      */
     public function run()
     {
-        Diary::factory()->count(rand(10, 20))->create();
+        Diary::factory()->count(rand(5, 20))->create();
     }
 }

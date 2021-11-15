@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'user.show', 'title' => 'Clinica x', 'navName' => 'Usuários', 'activeButton' => 'laravel'])
+@extends('layouts.app', ['activePage' => 'user.show', 'title' => 'Cabeleila Leila', 'navName' => 'Usuários', 'activeButton' => 'laravel'])
 
 @section('content')
 <meta name = "csrf-token" content = "{{csrf_token ()}}">
@@ -18,7 +18,7 @@
                             <div class="flex flex-col">
                                 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                                     <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-                                        <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                                        <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg" style="font-size: 0.993rem;">
                                             <table class="table table-hover table-striped">
                                                 <tr class="border-b">
                                                     <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">

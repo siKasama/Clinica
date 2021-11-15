@@ -14,17 +14,6 @@
                     </a>
                 </li>
 
-                <li class="dropdown nav-item">
-                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                        <i class="nc-icon nc-planet"></i>
-                        <span class="notification">1</span>
-                        <span class="d-lg-none">{{ __('Notification') }}</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <a class="dropdown-item" href="api/doctors">{{ __('API Tokens') }}</a>
-                    </ul> 
-                </li>
-
             </ul>
             <ul class="navbar-nav   d-flex align-items-center">
                 <li class="nav-item">

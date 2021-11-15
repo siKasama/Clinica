@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'diaries.index', 'title' => 'Clinica x', 'navName' => 'Agenda', 'activeButton' => 'laravel'])
+@extends('layouts.app', ['activePage' => 'diaries.index', 'title' => 'Cabeleila Leila', 'navName' => 'Agenda', 'activeButton' => 'laravel'])
 
 @section('content')
     <div class="content">
@@ -14,38 +14,37 @@
                             <div class="flex flex-col">
                                 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                                     <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-                                        <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                                        <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg" style="font-size: 0.993rem;">
                                             <table class="table table-hover table-striped">
                                                 <thead>
                                                     <th>ID</th>
-                                                    <th>Paciente</th>
-                                                    <th>Médico</th>
+                                                    <th>Cliente</th>
+                                                    <th>Serviço</th>
                                                     <th>Agendado</th>
-                                                    <th>Criado</th>
                                                     <th>Obs</th>
                                                     <th scope="col" width="200" class="px-6 py-3 bg-gray-50">  </th>
                                                 </thead>
                                                 <tbody>
                                                     @foreach ($diaries as $diary)
+                                                    <?php
+                                                       $hourMark = $diary->hour;
+                                                       $dataAgendada = substr($diary->dateBr, 0, 10) .' - '.  (strlen($hourMark) == 1 ? '0' . $hourMark : $hourMark) .   ':00';
+                                                    ?>
                                                     <tr>
                                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                                             {{ $diary->id }}
                                                         </td>
 
                                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                                            {{ $diary->paciente->name }}
+                                                            {{ $diary->client->name }}
                                                         </td>
 
                                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                                            {{ $diary->doctor->name }}
+                                                            {{ $diary->service->name }}
                                                         </td>
 
                                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                                            {{ $diary->dateBr  }}
-                                                        </td>
-
-                                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                                            {{ $diary->created_at  }}
+                                                             {{ $dataAgendada }}
                                                         </td>
 
                                                         <td class="px-6 py-4 text-sm text-gray-900">
@@ -54,18 +53,21 @@
 
                                                         <td class="px-6 py-4 text-sm font-medium">
                                                             <a href="{{ route('diaries.show', $diary->id) }}" class="text hover:text-blue-900 mb-2 mr-2" title="Exibir usuário">Ver</a>
+                                                            @if (substr($diary->dateBr, 0, 10) >= date('d/m/Y') && (auth()->user()->is_admin)) 
                                                             <a href="{{ route('diaries.edit', $diary->id) }}" class="text hover:text-indigo-900 mb-2 mr-2" title="Editar usuário">Editar</a>
-                                                            <form class="inline-block" action="{{ route('diaries.destroy', $diary->id) }}" method="POST" onsubmit="return confirm('Deseja mesmo excluir este usuário?');">
+                                                            <form class="inline-block" action="{{ route('diaries.destroy', $diary->id) }}" method="POST" onsubmit="return confirm('Deseja mesmo excluir este horário?');">
                                                                 <input type="hidden" name="_method" value="DELETE">
                                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                                 <input type="submit" class="text-red-600 hover:text-red-900 mb-2 mr-2 cursor-pointer" value="Excluir" title="Excluir usuário">
                                                             </form>
+                                                            @endif 
                                                         </td>
                                                     </tr>
                                                 @endforeach
 
                                                 </tbody>
                                             </table>
+                                            <p style="color: #5092EC; padding-left: 5%;">Total: {{$diaries->count()}}</p>
                                         </div>
                                     </div>
                                 </div>

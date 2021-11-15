@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'diaries.show', 'title' => 'Clinica x', 'navName' => 'Agendamento', 'activeButton' => 'laravel'])
+@extends('layouts.app', ['activePage' => 'diaries.show', 'title' => 'Cabeleila Leila', 'navName' => 'Agendamento', 'activeButton' => 'laravel'])
 
 @section('content')
     <div class="content">
@@ -18,7 +18,7 @@
                                     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                                         <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                                             <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-                                                <table class="table table-hover table-striped">
+                                                <table class="table table-hover table-striped" style="font-size: 0.993rem;">
                                                     <tr>
                                                         <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                             ID:
@@ -29,18 +29,18 @@
                                                     </tr>
                                                     <tr>
                                                         <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                            Paciente:
+                                                            Cliente:
                                                         </th>
                                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                                            {{ $diary->paciente->name }}
+                                                            {{ $diary->client->name }}
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                            Médico:
+                                                            Serviço:
                                                         </th>
                                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                                            {{ $diary->doctor->name }}
+                                                            {{ $diary->service->name }}
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -48,15 +48,12 @@
                                                             Agendado para:
                                                         </th>
                                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                                            {{ $diary->dateBr }}
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                            Criado em:
-                                                        </th>
-                                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                                            {{ $diary->created_at }}
+                                                        <?php
+                                                       $hourMark = $diary->hour;
+                                                       echo $dataAgendada = substr($diary->dateBr, 0, 10) .' - '.  (strlen($hourMark) == 1 ? '0' . $hourMark : $hourMark) .   ':00';
+                                                    ?>
+
+                                                            <!-- {{ $diary->dateBr }} -->
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -65,6 +62,14 @@
                                                         </th>
                                                         <td class="px-6 py-4 text-sm text-gray-900 bg-white divide-y divide-gray-200">
                                                             {{ $diary->observations }}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                            Criado em:
+                                                        </th>
+                                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
+                                                            {{ $diary->created_at }}
                                                         </td>
                                                     </tr>
                                                 </table>

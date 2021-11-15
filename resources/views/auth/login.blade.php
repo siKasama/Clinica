@@ -1,7 +1,7 @@
-@extends('layouts/app', ['activePage' => 'login', 'title' => 'Clinica x'])
+@extends('layouts/app', ['activePage' => 'login', 'title' => 'Cabeleila Leila'])
 
 @section('content')
-    <div class="full-page section-image" data-color="white" data-image="{{ asset('img/fundoazul.jpg') }}">
+    <div class="full-page section-image" data-color="white" data-image="{{ asset('img/rose.jpg') }}">
         <div class="content pt-5">
             <div class="container mt-5">
                 <div class="col-md-4 col-sm-6 ml-auto mr-auto">

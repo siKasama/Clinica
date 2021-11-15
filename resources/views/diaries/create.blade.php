@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'diaries.create', 'title' => 'Clinica x', 'navName' => 'Adicionar Agendamento', 'activeButton' => 'laravel'])
+@extends('layouts.app', ['activePage' => 'diaries.create', 'title' => 'Cabeleila Leila', 'navName' => 'Adicionar Agendamento', 'activeButton' => 'laravel'])
 
 
 @section('content')
@@ -20,48 +20,57 @@
                         <div class="block mb-8">
                             <a href="{{ route('diaries.index') }}" class="bg-gray-200 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded">Listar Agendamentos</a>
                         </div>
-                        <div class="mt-5 md:mt-0 md:col-span-2">
+                        <div class="mt-6" style="widht: 95%; border: 1px solid gray;">
                             <form method="post" action="{{ route('diaries.store') }}">
                                 @csrf
-                                <div class="shadow overflow-hidden sm:rounded-md">
+                                <div class="shadow overflow-hidden" style="font-size: 0.993rem;">
 
-                                    <div class="px-5 py-3bg-white sm:p-2">
-                                        <label for="paciente_id" class="block font-medium text-sm text-gray-700">Paciente: </label>
-                                        <select name="paciente_id" id="paciente_id" class="block rounded-md shadow-sm mt-1 block w-full">
-                                            @foreach($pacientes as $paciente)
-                                                <option value="{{ $paciente->id }}"{{ $paciente->id  == old('paciente_id', '') ? ' selected' : '' }}>{{ $paciente->name }}</option>
+                                    <div class="px-5" style="margin-top:5px;">
+                                        <label for="client_id" class="font-medium text-sm text-gray-700">Cliente: </label>
+                                        <select name="client_id" id="client_id" class="block rounded-md shadow-sm mt-1 block w-full" style="width:75%;">
+                                            @foreach($clients as $client)
+                                                <option value="{{ $client->id }}"{{ $client->id  == old('client_id', '') ? ' selected' : '' }}>{{ $client->name }}</option>
                                             @endforeach
                                         </select>
-                                        @error('paciente_id')
+                                        @error('client_id')
                                         <p class="text-sm text-red-600">{{ $message }}</p>
                                         @enderror
                                     </div>
 
                                     <div class="px-5 py-3bg-white sm:p-2">
-                                        <label for="doctor_id" class="block font-medium text-sm text-gray-700">Médico: </label>
-                                        <select name="doctor_id" id="doctor_id" class="block rounded-md shadow-sm mt-1 block w-full">
-                                            @foreach($doctors as $doctor)
-                                                <option value="{{ $doctor->id }}"{{ $doctor->id  == old('paciente_id', '') ? ' selected' : '' }}>{{ $doctor->name }}</option>
+                                        <label for="service_id" class="block font-medium text-sm text-gray-700">Serviço: </label>
+                                        <select name="service_id" id="service_id" class="block rounded-md shadow-sm mt-1 block w-full" style="width:75%;">
+                                            @foreach($services as $service)
+                                                <option value="{{ $service->id }}"{{ $service->id  == old('service_id', '') ? ' selected' : '' }}>{{ $service->name }}</option>
                                             @endforeach
                                         </select>
-                                        @error('doctor_id')
+                                        @error('service_id')
                                         <p class="text-sm text-red-600">{{ $message }}</p>
                                         @enderror
                                     </div>
 
                                     <div class="px-5 py-3bg-white sm:p-2">
                                         <label for="date" class="block font-medium text-sm text-gray-700">Agendar para: </label>
-                                        <input type="datetime-local" name="date" id="date" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                        <input type="datetime-local" name="date" id="date" class="form-input rounded-md shadow-sm mt-1 block w-full valor"
                                                value={{ old('date', \Carbon\Carbon::now()->addHours(1)->format('Y-m-d\TH:i')) }} />
                                         @error('date')
+                                        <input type="hidden" id="hour" name="hour" value="{{ old('hour', '') }}">
+                                        <p class="text-sm text-red-600">{{ $message }}</p>
+                                        @enderror
+                                   
+                                        <label for="hour" class="block font-medium text-sm text-gray-700"> - </label>
+                                        <input type="text" id="hour" name="hour" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                            readonly value="{{ old('hour', '') }}">
+                                        @error('hour')
                                         <p class="text-sm text-red-600">{{ $message }}</p>
                                         @enderror
                                     </div>
 
                                     <div class="px-5 py-3bg-white sm:p-2">
-                                        <label for="observations" class="block font-medium text-sm text-gray-700">Observações: </label>
-                                        <textarea name="observations" id="observations" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                             rows="7"     value="{{ old('observations', '') }}"></textarea>
+                                        <label for="observations" class="block font-medium text-sm text-gray-700" style="top:0;">Observações: </label>
+                                        <br>
+                                        <textarea name="observations" id="observations" class="form-input rounded-md shadow-sm mt-1 block w-full" style="width:82%;"
+                                             rows="7" value="{{ old('observations', '') }}"></textarea>
                                         @error('observations')
                                         <p class="text-sm text-red-600">{{ $message }}</p>
                                         @enderror
@@ -86,3 +95,27 @@
 </div>
 </div>
 @endsection
+@push('js')
+<script type="text/javascript">
+$(document).ready(function(){
+    $(".valor").on("input", function(){
+        var input = document.querySelector("#date");
+        var texto = input.value;
+        
+        var dtInicio = document.getElementById('date');
+        var dtFim =  document.getElementById('date');
+
+        if(dtInicio.value.length > 0){
+
+            dtInicio = dtInicio.value.split("-");
+            dtFim = dtFim.value.split(":")
+            auxHour = dtFim[0].substr(dtFim[0].length -2);
+            data1 = new Date(dtInicio[2] + "/" + dtInicio[1] + "/" + dtInicio[0]);
+            auxHour = auxHour + ":" + dtFim[1];
+            $("#hour").val(auxHour);
+            console.log(auxHour);
+        }
+    });
+});
+</script>
+@endpush

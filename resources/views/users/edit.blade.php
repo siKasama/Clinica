@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'users.edit', 'title' => 'Clinica x', 'navName' => 'Alterar cadastro Usuario', 'activeButton' => 'laravel'])
+@extends('layouts.app', ['activePage' => 'users.edit', 'title' => 'Cabeleila Leila', 'navName' => 'Alterar cadastro Usuario', 'activeButton' => 'laravel'])
 
 @section('content')
     <div class="content">
@@ -20,7 +20,7 @@
                         <div class="block mb-8">
                             <a href="{{ route('users.index') }}" class="bg-gray-200 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded">Listar Usuários</a>
                         </div>
-                        <div class="mt-5 md:mt-0 md:col-span-2">
+                        <div class="mt-5 md:mt-0 md:col-span-2" style="font-size: 0.993rem;">
                             <form method="post" action="{{ route('users.update', $user->id) }}">
                                 @csrf
                                 @method('put')

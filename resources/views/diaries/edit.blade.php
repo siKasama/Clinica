@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'diaries.edit', 'title' => 'Clinica x', 'navName' => 'Alterar Agendamento', 'activeButton' => 'laravel'])
+@extends('layouts.app', ['activePage' => 'diaries.edit', 'title' => 'Cabeleila Leila', 'navName' => 'Alterar Agendamento', 'activeButton' => 'laravel'])
 
 @section('content')
     <div class="content">
@@ -23,7 +23,7 @@
                             <form method="post" action="{{ route('diaries.update', $diary->id) }}">
                                 @csrf
                                 @method('put')
-                                <div class="shadow overflow-hidden sm:rounded-md">
+                                <div class="shadow overflow-hidden sm:rounded-md" style="font-size: 0.993rem;">
 
                                     <div class="px-5 py-4 bg-white sm:p-2">
                                         <label for="id" class="block font-medium text-sm text-gray-700">Número: </label>
@@ -32,15 +32,15 @@
                                     </div>
 
                                     <div class="px-5 py-4 bg-white sm:p-2">
-                                        <label for="paciente_name" class="block font-medium text-sm text-gray-700">Paciente: </label>
+                                        <label for="client_name" class="block font-medium text-sm text-gray-700">Cliente: </label>
                                         <input type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                               value="{{ $diary->paciente->name }}" readonly />
+                                               value="{{ $diary->client->name }}" readonly />
                                     </div>
 
                                     <div class="px-5 py-4 bg-white sm:p-2">
-                                        <label for="doctor_name" class="block font-medium text-sm text-gray-700">Doctor: </label>
+                                        <label for="service_name" class="block font-medium text-sm text-gray-700">Serviço: </label>
                                         <input type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                               value="{{ $diary->doctor->name }}" readonly />
+                                               value="{{ $diary->service->name }}" readonly />
                                     </div>
 
                                     <div class="px-5 py-4 bg-white sm:p-2">

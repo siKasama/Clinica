@@ -1,20 +1,10 @@
-<!--
-=========================================================
- Light Bootstrap Dashboard - v2.0.1
-=========================================================
- Product Page: https://www.creative-tim.com/product/light-bootstrap-dashboard
- Copyright 2019 Creative Tim (https://www.creative-tim.com) & Updivision (https://www.updivision.com)
- Licensed under MIT (https://github.com/creativetimofficial/light-bootstrap-dashboard/blob/master/LICENSE)
 
- Coded by Creative Tim & Updivision
-=========================================================
--->
 <!DOCTYPE html>
 
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('img/tablet_information.png') }}">
+        <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('img/beauty-salon_128.png') }}">
         <link rel="icon" type="image/png" href="{{ asset('img/responsive3.ico') }}">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <title>{{ $title }}</title>
@@ -44,9 +34,6 @@
             </div>
 
         </div>
-
-
-
     </body>
         <!--   Core JS Files   -->
     <script src="{{ asset('light-bootstrap/js/core/jquery.3.2.1.min.js') }}" type="text/javascript"></script>

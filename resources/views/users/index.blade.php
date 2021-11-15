@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'users.index', 'title' => 'Clinica x', 'navName' => 'Users', 'activeButton' => 'laravel'])
+@extends('layouts.app', ['activePage' => 'users.index', 'title' => 'Cabeleila Leila', 'navName' => 'Users', 'activeButton' => 'laravel'])
 
 @section('content')
 <meta name = "csrf-token" content = "{{csrf_token ()}}">
@@ -13,7 +13,7 @@
                 </div>
                 <div class="card-body">
                     <div class="flex flex-col">
-                        <div class="card strpied-tabled-with-hover">
+                        <div class="card strpied-tabled-with-hover" style="font-size: 0.993rem;">
                             <div class="card-body table-full-width table-responsive">
                                 <table class="table table-hover table-striped">
                                     <thead>

@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Diary;
-use App\Models\Doctor;
-use App\Models\Paciente;
+use App\Models\Service;
+use App\Models\Client;
 use App\Http\Requests\StoreDiaryRequest;
 use App\Http\Requests\UpdateDiaryRequest;
 
@@ -18,8 +18,7 @@ class DiaryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()  {
-
-        $diaries = Diary::all();
+        $diaries = Diary::orderBy('date')->orderBy('hour')->get();
         return view('diaries.index', compact('diaries'));
     }
 
@@ -29,11 +28,10 @@ class DiaryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()  {
+        $clients = client::orderBy('name')->get();
+        $services = Service::orderBy('name')->get();
 
-        $pacientes = Paciente::orderBy('name')->get();
-        $doctors = Doctor::orderBy('name')->get();
-
-        return view('diaries.create', compact('pacientes', 'doctors'));
+        return view('diaries.create', compact('clients', 'services'));
     }
 
     /**
@@ -43,7 +41,6 @@ class DiaryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(StoreDiaryRequest $request)  {
-
         $diary = Diary::create($request->validated());
 
         return redirect()->route('diaries.index');
@@ -96,5 +93,27 @@ class DiaryController extends Controller
         $diary->delete();
 
         return redirect()->route('diaries.index');
+    }
+
+    public function markClient($idClient) {
+        $diary = Diary::where('client_id', $idClient)->orderBy('date')->get();
+        return view('', compact('diary'));
+    }
+
+    public function byDate($idDate) {
+        $auxDate =  $idDate ." 00:00:00";
+        $auxDatef = $idDate ." 23:59:59";
+
+        $diaries = Diary::whereBetween('date',[$auxDate,  $auxDatef])->orderBy('hour')->get();
+        return view('diaries.index', compact('diaries'));
+    }
+
+    public function hourCheck($idDate) {
+        $diary = Diary::where('date', $idDate)->get();
+        $arr_hour = [];
+        foreach ($diary as $d) {
+            array_push($arr_hour, $d->hour);
+        }
+        return view('diaries.showDate', compact($arr_hour));
     }
 }

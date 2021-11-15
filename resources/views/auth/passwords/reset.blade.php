@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'login', 'title' => 'Clinica x'])
+@extends('layouts.app', ['activePage' => 'login', 'title' => 'Cabeleila Leila'])
 
 @section('content')
     <div class="full-page section-image" data-color="blue" data-image="{{asset('img/azul.jpg')}}">
